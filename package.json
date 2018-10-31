@@ -1,14 +1,14 @@
 {
   "name": "account-password",
-  "version": "1.0.3",
-  "description": "A login service that enables secure password-based login.",
+  "version": "1.0.6",
+  "description": "A login service that enables secure password-based login. ",
   "main": "lib/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drunken005/acccount-password.git"
+    "url": "git+https://github.com/drunken005/account-password.git"
   },
   "keywords": [
     "Account",
@@ -18,9 +18,9 @@
   "author": "drunken",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drunken005/acccount-password/issues"
+    "url": "https://github.com/drunken005/account-password/issues"
   },
-  "homepage": "https://github.com/drunken005/acccount-password#readme",
+  "homepage": "https://github.com/drunken005/account-password#readme",
   "dependencies": {
     "bcrypt": "^3.0.2",
     "create-hash": "^1.2.0",
