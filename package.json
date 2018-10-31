@@ -1,6 +1,6 @@
 {
   "name": "acccount-password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A login service that enables secure password-based login.",
   "main": "lib/index",
   "scripts": {
