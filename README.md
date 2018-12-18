@@ -6,7 +6,7 @@ A login service that enables secure password-based login. `current version only 
 ```bash
 npm install account-password --save
 ```
-## TEST
+## Test
 ```bash
 npm i
 npm test
@@ -83,33 +83,37 @@ Account data struct
 The parameter `password` supports plaintext password and sha256 signaturem, recommend to use sha256 signature
 e.g
 ```bash
-	const sha256 = require('sha256');
-    
-    //plaintext password
-    password = '123456';
-    
-    //sha256 signaturem
-    password = {
-    	algorithm: 'sha-256',
-        digest: sha256('123456')
-    }
+const sha256 = require('sha256');
+
+//plaintext password
+password = '123456';
+
+//sha256 signaturem
+password = {
+    algorithm: 'sha-256',
+    digest: sha256('123456')
+}
 ```
 
 * #### `createUser(options)` Register a user by username or email or otherwise
+
   ##### Inputs options
    * `username` require.
    * `email` optional.
    * `password` optional. plaintext password or sha256 signature, `optional` is for compatibility with other registration, such mobile verification code or third parties
+   
   ##### Return value
   Promise, registered user info
 
 
 
 * #### `loginWithPassword(options)` Login with username or email
+  
   ##### Inputs options
    * `username` optional.
    * `email` optional.
    * `password` require. plaintext password or sha256 signature
+  
   ##### Return value
   ```bash
     {
@@ -120,8 +124,10 @@ e.g
   ```
 
 * #### `loginWithToken(options)` Used to check whether the token is expired
+  
   ##### Inputs options
    * `resume` require. Token returned by login
+  
   ##### Return value
   ```bash
     {
@@ -132,34 +138,42 @@ e.g
   ```
 
 * #### `changePassword(userId, oldPassword, newPassword)` Change user password
+  
   ##### Inputs options
    * `userId` require. user id
    * `oldPassword` require. plaintext password or sha256 signature
    * `newPassword` require. plaintext password or sha256 signature
+  
   ##### Return value
   Object. {userId: 'xxx'}
 
 
 * #### `checkPassword(user, password)` Check user password
+  
   ##### Inputs options
    * `user` require. Must contain 'services.password.bcrypt' field
    * `password` require. plaintext password or sha256 signature
+  
   ##### Return value
   Object.If the password match return {userId: 'xxx'}, otherwise return {error: 'Incorrect password'}
 
 
 * #### `resetPassword(token, newPlaintextPassword)` Reset user password
+  
   ##### Inputs options
    * `token` require. login token
    * `newPlaintextPassword` require. plaintext password or sha256 signature
+  
   ##### Return value
   Object. {userId: 'xxx'}
 
 
 * #### `setPassword(userId, newPlaintextPassword)` Set user password
+  
   ##### Inputs options
    * `userId` require. user id
    * `newPlaintextPassword` require. plaintext password or sha256 signature
+  
   ##### Return value
   Object. {userId: 'xxx'}
 
