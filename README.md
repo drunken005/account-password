@@ -90,12 +90,12 @@ e.g
 ```
 
 * #### `createUser(options)` Register a user by username or email or otherwise
-##### Inputs options
- * `username` require.
- * `email` optional.
- * `password` optional. plaintext password or sha256 signature, `optional` is for compatibility with other registration, such mobile verification code or third parties
-##### Return value
-Promise, registered user info
+  ##### Inputs options
+   * `username` require.
+   * `email` optional.
+   * `password` optional. plaintext password or sha256 signature, `optional` is for compatibility with other registration, such mobile verification code or third parties
+  ##### Return value
+  Promise, registered user info
 
 
 
