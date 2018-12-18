@@ -72,12 +72,30 @@ Account data struct
     const account = new Account(User, options);
 ```
 
-## APIS
+## Apis
+
+The parameter password supports plaintext password and sha256 signaturem, recommend to use sha256 signature
+e.g
+```bash
+	const sha256 = require('sha256');
+    
+    //sha256 signaturem
+    password = {
+    	algorithm: 'sha-256',
+        digest: sha256('123456')
+    }
+    
+    //plaintext password
+    
+    password = '123456';
+    
+```
+
 #### `createUser(options) Register a user by username or email or otherwise`
 ##### Inputs options
  * `username` require.
  * `email` optional.
- * `password` optional. plaintext password, `optional` is for compatibility with other registration, such mobile verification code or third parties
+ * `password` optional. plaintext password or sha256 signature, `optional` is for compatibility with other registration, such mobile verification code or third parties
 ##### Return value
 Promise, registered user info
 
@@ -87,7 +105,7 @@ Promise, registered user info
 ##### Inputs options
  * `username` optional.
  * `email` optional.
- * `password` require. plaintext password
+ * `password` require. plaintext password or sha256 signature
 ##### Return value
 ```bash
     {
@@ -109,11 +127,11 @@ Promise, registered user info
     }
 ```
 
-#### `loginWithToken(userId, oldPassword, newPassword) Change user password`
+#### `changePassword(userId, oldPassword, newPassword) Change user password`
 ##### Inputs options
  * `userId` require. user id
- * `oldPassword` require. plaintext password
- * `newPassword` require. plaintext password
+ * `oldPassword` require. plaintext password or sha256 signature
+ * `newPassword` require. plaintext password or sha256 signature
 ##### Return value
 Object. {userId: 'xxx'}
 
@@ -121,7 +139,7 @@ Object. {userId: 'xxx'}
 #### `checkPassword(user, password) Change user password`
 ##### Inputs options
  * `user` require. Must contain 'services.password.bcrypt' field
- * `password` require. plaintext password
+ * `password` require. plaintext password or sha256 signature
 ##### Return value
 Object.If the password match return {userId: 'xxx'}, otherwise return {error: 'Incorrect password'}
 
@@ -129,7 +147,7 @@ Object.If the password match return {userId: 'xxx'}, otherwise return {error: 'I
 #### `resetPassword(token, newPlaintextPassword) Reset user password`
 ##### Inputs options
  * `token` require. login token
- * `newPlaintextPassword` require. plaintext password
+ * `newPlaintextPassword` require. plaintext password or sha256 signature
 ##### Return value
 Object. {userId: 'xxx'}
 
@@ -137,7 +155,7 @@ Object. {userId: 'xxx'}
 #### `setPassword(userId, newPlaintextPassword) Set user password`
 ##### Inputs options
  * `userId` require. user id
- * `newPlaintextPassword` require. plaintext password
+ * `newPlaintextPassword` require. plaintext password or sha256 signature
 ##### Return value
 Object. {userId: 'xxx'}
 
