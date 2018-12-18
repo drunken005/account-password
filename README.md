@@ -17,29 +17,29 @@ npm test
 e.g:
 
 ```bash
-    const mongoose = require('mongoose');
-    const Schema = mongoose.Schema;
-    const UserSchema = new Schema({
-        _id: {type: String},
-        createdAt: {type: Date},
-        services: {
-            password: {bcrypt: {type: String}},
-            resume: {
-                loginTokens: {
-                    type: [
-                        {
-                            when: Date,
-                            hashedToken: String
-                        }
-                    ]
-                }
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const UserSchema = new Schema({
+    _id: {type: String},
+    createdAt: {type: Date},
+    services: {
+        password: {bcrypt: {type: String}},
+        resume: {
+            loginTokens: {
+                type: [
+                    {
+                        when: Date,
+                        hashedToken: String
+                    }
+                ]
             }
-        },
-        username: {type: String},
-        email: {type: String},
-        ....
-    });
-   const User = mongoose.model('User', UserSchema);
+        }
+    },
+    username: {type: String},
+    email: {type: String},
+    ....
+});
+const User = mongoose.model('User', UserSchema);
 ```
 Account data struct
 ```bash
@@ -71,11 +71,11 @@ Account data struct
 
 
 ```bash
-    const Account = require('account-password');
-    const options = {
-        loginExpirationInDays: 30 //how long (in days) until a login token expires, default 90
-    }
-    const account = new Account(User, options);
+const Account = require('account-password');
+const options = {
+    loginExpirationInDays: 30 //how long (in days) until a login token expires, default 90
+}
+const account = new Account(User, options);
 ```
 
 ## API

@@ -1,6 +1,6 @@
 {
   "name": "account-password",
-  "version": "1.0.9",
+  "version": "1.1.2",
   "description": "A login service that enables secure password-based login. ",
   "main": "lib/index",
   "scripts": {
