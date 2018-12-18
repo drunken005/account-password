@@ -95,86 +95,69 @@ password = {
 }
 ```
 
-* #### `createUser(options)` Register a user by username or email or otherwise
-
-  ##### Inputs options
+#### `createUser(options)` Register a user by username or email or otherwise
+##### Inputs options
    * `username` require.
    * `email` optional.
    * `password` optional. plaintext password or sha256 signature, `optional` is for compatibility with other registration, such mobile verification code or third parties
-   
-  ##### Return value
+##### Return value
   Promise, registered user info
 
 
 
-* #### `loginWithPassword(options)` Login with username or email
-  
-  ##### Inputs options
+#### `loginWithPassword(options)` Login with username or email
+##### Inputs options
    * `username` optional.
    * `email` optional.
    * `password` require. plaintext password or sha256 signature
-  
-  ##### Return value
-  ```bash
-    {
-        "id": "8xmjaqweQ6vzGg1q3gvt", //user id
-        "token": "UAqyxZCfYNde9Bc6EXo-QRVJN9IxgsaaDHF57NkEqr0", //token
-        "tokenExpires": "2018-11-15 10:52:02.191", //token expires time
-    }
-  ```
+##### Return value
+```bash
+{
+    "id": "8xmjaqweQ6vzGg1q3gvt", //user id
+    "token": "UAqyxZCfYNde9Bc6EXo-QRVJN9IxgsaaDHF57NkEqr0", //token
+    "tokenExpires": "2018-11-15 10:52:02.191", //token expires time
+}
+```
 
-* #### `loginWithToken(options)` Used to check whether the token is expired
-  
-  ##### Inputs options
+#### `loginWithToken(options)` Used to check whether the token is expired
+##### Inputs options
    * `resume` require. Token returned by login
-  
-  ##### Return value
-  ```bash
-    {
-        "id": "8xmjaqweQ6vzGg1q3gvt", //user id
-        "token": "UAqyxZCfYNde9Bc6EXo-QRVJN9IxgsaaDHF57NkEqr0", //token
-        "tokenExpires": "2018-11-15 10:52:02.191", //token expires time
-    }
-  ```
+##### Return value
+```bash
+{
+    "id": "8xmjaqweQ6vzGg1q3gvt", //user id
+    "token": "UAqyxZCfYNde9Bc6EXo-QRVJN9IxgsaaDHF57NkEqr0", //token
+    "tokenExpires": "2018-11-15 10:52:02.191", //token expires time
+}
+```
 
-* #### `changePassword(userId, oldPassword, newPassword)` Change user password
-  
-  ##### Inputs options
+#### `changePassword(userId, oldPassword, newPassword)` Change user password
+##### Inputs options
    * `userId` require. user id
    * `oldPassword` require. plaintext password or sha256 signature
    * `newPassword` require. plaintext password or sha256 signature
-  
-  ##### Return value
+##### Return value
   Object. {userId: 'xxx'}
 
-
-* #### `checkPassword(user, password)` Check user password
-  
-  ##### Inputs options
+#### `checkPassword(user, password)` Check user password
+##### Inputs options
    * `user` require. Must contain 'services.password.bcrypt' field
    * `password` require. plaintext password or sha256 signature
-  
-  ##### Return value
+##### Return value
   Object.If the password match return {userId: 'xxx'}, otherwise return {error: 'Incorrect password'}
 
-
-* #### `resetPassword(token, newPlaintextPassword)` Reset user password
-  
-  ##### Inputs options
+#### `resetPassword(token, newPlaintextPassword)` Reset user password
+##### Inputs options
    * `token` require. login token
    * `newPlaintextPassword` require. plaintext password or sha256 signature
-  
-  ##### Return value
+##### Return value
   Object. {userId: 'xxx'}
 
-
-* #### `setPassword(userId, newPlaintextPassword)` Set user password
-  
-  ##### Inputs options
+#### `setPassword(userId, newPlaintextPassword)` Set user password
+##### Inputs options
    * `userId` require. user id
    * `newPlaintextPassword` require. plaintext password or sha256 signature
-  
-  ##### Return value
+##### Return value
   Object. {userId: 'xxx'}
 
 ## Other ways login
