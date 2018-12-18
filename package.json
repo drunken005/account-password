@@ -1,10 +1,10 @@
 {
   "name": "account-password",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A login service that enables secure password-based login. ",
   "main": "lib/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,11 @@
     "parameter": "^3.3.1",
     "randomstring": "^1.1.5",
     "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.4.0",
+    "should": "^13.2.3"
   }
 }

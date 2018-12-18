@@ -6,6 +6,12 @@ A login service that enables secure password-based login. `current version only 
 ```bash
 npm install account-password --save
 ```
+## TEST
+```bash
+npm i
+npm test
+```
+
 ## Defining your account schema
 
 e.g:
